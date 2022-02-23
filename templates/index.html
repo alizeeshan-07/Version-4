@@ -1,0 +1,128 @@
+<html> 
+<head> <title> Calculator </title> 
+<style>
+.head{
+	background-color: #dd5599; 
+	padding: 25px;
+	border-radius: 0px 0px 20px 20px; 
+	color: yellow;
+}
+
+input{
+	background-color: black; 
+	color: white;
+	margin: 3px;
+	font-size: 18px;
+	border:3px solid black; 
+	border-radius: 10px;
+	height: 50px;
+	width: 50px;
+	margin-left: 3px;
+}
+input:hover{
+	background-color: #C6C6C6; 
+	color: black;
+	border: 3px solid #C6C6C6; 
+	cursor: pointer;
+}
+.dbox{
+	background-color: #dddddd;
+	border: 8px ridge white;
+	border-radius: 0px 0px 0px 0px; 
+	width: 240px;
+	color: black;
+	font-weight: bold;
+	text-align: right;
+	font-size: 22px;
+	margin-top: 10px;
+}
+.dbox:hover{
+	background-color: #dddddd;
+	border: 8px ridge white;
+	border-radius: 0px 0px 0px 0px;
+}
+
+.round{
+	background-color:rgb(200, 100, 50); 
+	border: 3px outset rgb(200, 100, 50);
+	border-radius: 10px;
+	padding: 5px;
+}
+
+#AC{
+	background-color: red;
+	border: 5px inset red;
+}
+</style> 
+
+<script type="text/javascript"> 
+function AddDigit(num){
+	Calculator.Display.value=Calculator.Display.value+num; 
+}
+
+function Clear(){
+	document.Calculator.Display.value=null; 
+}
+
+function Erase(){
+	Calculator.Display.value=Calculator.Display.value.slice(0,Calculator.Display.value.length-1);
+}
+
+</script> 
+
+</head> 
+<body> 
+
+<h1 class="head">
+ <marquee scrollamount="4"> 
+ Cloud Computing -- Assignment: 1
+ </marquee>
+ </h1> 
+
+<form name="Calculator"> 
+<table border="0" align="center" class="round"> 
+<tr> 
+	<td> 
+		<input class="dbox" type="text" maxlength="30" size="30" name="Display" value="0"> 
+	</td> 
+</tr> 
+<tr> 
+	<td> <input type="button" value="ON" name="AC" onClick="Clear()" id="AC"> 
+	     <input type="button" value="<-" name="Er" onClick="Erase()"> 
+	     <input type="button" value="(" name="bropn" onClick="AddDigit('(')">
+	     <input type="button" value=")" name="brclos" onClick="AddDigit(')')">
+	</td>
+</tr> 
+<tr> 	
+	<td> <input type="button" value="7" name="seven" onClick="AddDigit('7')">
+	     <input type="button" value="8" name="eight" onClick="AddDigit('8')"> 
+	     <input type="button" value="9" name="nine" onClick="AddDigit('9')"> 
+	     <input type="button" value="+" name="add" onClick="AddDigit('+')"> 
+        </td>
+</tr> 
+<tr> 
+	<td> <input type="button" value="4" name="four" onClick="AddDigit('4')"> 
+	     <input type="button" value="5" name="five" onClick="AddDigit('5')"> 
+	     <input type="button" value="6" name="six" onClick="AddDigit('6')"> 
+	     <input type="button" value="-" name="sub" onClick="AddDigit('-')"> 
+        </td> 
+</tr> 
+<tr> 
+	<td> <input type="button" value="1" name="one" onClick="AddDigit('1')"> 
+	     <input type="button" value="2" name="two" onClick="AddDigit('2')"> 
+	     <input type="button" value="3" name="three" onClick="AddDigit('3')"> 
+	     <input type="button" value="   x   " name="pro" onclick="AddDigit('*')"> 
+        </td> 
+</tr> 
+<tr> 
+	<td> <input type="button" value="0" name="zero" onClick="AddDigit('0')"> 
+	     <input type="button" value="." name="dot" onClick="AddDigit('.')"> 
+	     <input type="button" value="=" name="equal" onClick="Display.value=eval(Display.value)">  
+	     <input type="button" value="/" name="div" onClick="AddDigit('/')"> 
+        </td> 
+</tr> 
+</table> 
+	
+</form>  
+</body> 
+</html> 
